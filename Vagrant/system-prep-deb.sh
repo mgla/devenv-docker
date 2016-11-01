@@ -23,10 +23,10 @@ apt-get update
 #apt-cache policy docker-engine
 
 apt-get install -y docker-engine
-systemctl start docker
 
-## Developer tools
+## Developer tooling
 # Specific to this project
+sudo gpasswd -a vagrant docker
 # Common
 apt-get install -y vim git
 # Some of my more personal stuff. Comment it out if you do not like it
@@ -34,5 +34,7 @@ apt-get install -y zsh tree tmux curl
 
 git clone https://github.com/mgla/dotfiles /home/vagrant/dotfiles && sudo -u vagrant /home/vagrant/dotfiles/deploy
 chsh vagrant -s /bin/zsh
+
+systemctl start docker
 
 ## Dependencies
